@@ -36,3 +36,20 @@ input[type="text"]
     width: 300px;
     margin-left: 0;
 }
+
+textarea
+{
+    width: 500px; 
+    height: 300px; 
+    padding: 10px;
+}
+input[type="submit"], input[type="reset"]
+{
+    background-color: blue;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
