@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz Rejestracyjny</title>
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Formularz Rejestracyjny</h1>
+    </header>
+    <main>
+        <div class="formularz">
+            <b><a style="color: red">(*)</a> - Pola obowiązkowe</b>
+            <br><br>
+            <form>
+                <label for="nazwisko"><b>Nazwisko: <a style="color: red">*</a> </b></label>
+                <input type="text" id="nazwisko" placeholder="nazwisko"><br><br>
+                <label for="imie"><b>Imię: <a style="color: red">*</a> </b></label>
+                <input type="text" id="imie" placeholder="Imie"><br><br>
+                <h3>Adres:<a style="color: red"> *</a></h3><br>
+                <label for="kod-pocztowy"><b>Kod pocztowy:  </b></label>
+                <input type="text" id="kod-pocztowy" placeholder="00-000"><br><br>
+                <label for="miasto"><b>Miasto: <a style="color: red">*</a> </b></label>
+                <input type="text" id="miasto" placeholder="Miasto"><br><br>
+                <hr><br>
+                <label for="plec"><b>Wybierz płeć: </b></label>
+                <input type="radio" id="kobieta" name="plec" value="kobieta"> Kobieta
+                <input type="radio" id="mezczyzna" name="plec" value="mezczyzna"> Mężczyzna
+                <br><br>
+                <hr><br>
+                <label for="wiek"><b>Podaj przedział wiekowy: </b></label>
+                <input type="text" id="wiek" placeholder="16-24, 25-39, 40-60, powyżej 60"><br><br>
+                <hr><br>
+                <label for="email"><b>Podaj adres e-mail: <a style="color: red">*</a> </b></label>
+                <input type="text" id="email" placeholder="a@serwer.pl"><br><br>
+                <hr><br>
+                <label for="wyksztalcenie"><b>Wykształcenie: </b></label><br><br>
+                <input type="radio" id="wyksztalcenie-podstawowe" name="wyksztalcenie" value="Podstawowe"> Podstawowe<br>
+                <input type="radio" id="wyksztalcenie-srednie" name="wyksztalcenie" value="Srednie"> Średnie<br>
+                <input type="radio" id="wyksztalcenie-wyzsze" name="wyksztalcenie" value="Wyzsze"> Wyższe<br><br>
+                <hr><br>
+                <label for="jezyk"><b>Wybierz Języki: </b></label><br><br>
+                <select name="jezyki" size="6" multiple>
+                    <option value="angielski">Język Angielski</option>
+                    <option value="niemiecki">Język Niemiecki</option>
+                    <option value="francuski">Język Francuski</option>
+                    <option value="wloski">Język Włoski</option>
+                    <option value="hiszpanski">Język Hiszpański</option>
+                    <option value="rosyjski">Język Rosyjski</option>
+                </select>
+                <br><br>
+                Uwaga: <kbd>Ctrl</kbd> pozwala zaznaczyć kilka języków
+                <br><br>
+                <hr><br>
+                <label for="zainteresowania"><b>Zainteresowania: </b></label><br><br>
+                <input type="checkbox" id="zainteresowania-motoryzacja" name="zainteresowania" value="motoryzacja"> Motoryzacja<br>
+                <input type="checkbox" id="zainteresowania-sport" name="zainteresowania" value="sport"> Sport<br>
+                <input type="checkbox" id="zainteresowania-muzyka" name="zainteresowania" value="muzyka"> Muzyka<br>
+                <input type="checkbox" id="zainteresowania-taniec" name="zainteresowania" value="taniec"> Taniec<br>
+                <input type="checkbox" id="zainteresowania-Gry" name="zainteresowania" value="gry"> Gry<br>
+                <input type="checkbox" id="zainteresowania-inne" name="zainteresowania" value="inne"> Inne (podaj jakie):
+                <input type="text" id="zainteresowania-inne"><br><br>
+                <hr><br>
+
+            </form>
+        </div>
+    </main>
+</body>
+</html>
