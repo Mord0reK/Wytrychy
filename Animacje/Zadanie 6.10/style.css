@@ -1,0 +1,60 @@
+img
+{
+    width: 100px;
+}
+
+.samochod1
+{
+    animation: samochod1 3s linear 2s forwards;
+}
+
+.samochod2
+{
+    animation: samochod2 10s linear 2s forwards;
+}
+
+.samochod3
+{
+    animation: samochod3 6s linear 2s forwards;
+}
+
+.samochod4
+{
+    animation: samochod4 1s linear 2s forwards;
+}
+
+.samochod5
+{
+    animation: samochod5 9s linear 2s forwards;
+}
+
+
+@keyframes samochod1
+{
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(1000px);}
+}
+
+@keyframes samochod2
+{
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(1000px);}
+}
+
+@keyframes samochod3
+{
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(1000px);}
+}
+
+@keyframes samochod4
+{
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(1000px);}
+}
+
+@keyframes samochod5
+{
+    0% {transform: translateX(0px);}
+    100% {transform: translateX(1000px);}
+}

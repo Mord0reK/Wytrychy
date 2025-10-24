@@ -1,0 +1,60 @@
+div.animacja
+{
+    color: #338171;
+    font-size: 30px;
+    font-family: sans-serif;
+    position: relative;
+    top: 20px;
+    left: 150px;
+    width: 300px;
+    height: 40px;
+    animation: animacja 10s ease 2s infinite alternate;
+    -webkit-animation: animacja 10s ease 2s infinite alternate;
+}
+
+@keyframes animacja
+{
+    0%
+    {
+        top: 20px;
+        left: 150px;
+    }
+    25%
+    {
+        top: 20px;
+        left: 150px;
+    }
+    55%
+    {
+        top: 5px;
+        left: 350px;
+    }
+    100%
+    {
+        top: 80px;
+        left: 0px;
+    }
+}
+
+@-webkit-keyframes animacja {
+    0%
+    {
+        top: 20px;
+        left: 150px;
+    }
+    25%
+    {
+        top: 20px;
+        left: 150px;
+    }
+    55%
+    {
+        top: 5px;
+        left: 350px;
+    }
+    100%
+    {
+        top: 80px;
+        left: 0px;
+    }
+}
