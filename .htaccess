@@ -11,10 +11,29 @@ IndexOptions +SuppressDescription
 HeaderName /HEADER.html
 ReadmeName /FOOTER.html
 
-# Ukryj pliki konfiguracyjne i katalogi Git
-IndexIgnore .htaccess HEADER.html FOOTER.html .git .github .gitignore .gitattributes
+# Ukryj pliki konfiguracyjne i katalogi Git z listingu
+IndexIgnore .htaccess HEADER.html FOOTER.html .git .github .gitignore .gitattributes .env .env.*
 
-# Opcjonalnie: Zablokuj całkowicie dostęp do katalogów .git i .github
-<DirectoryMatch "^/.*(\.git|\.github)">
+# Całkowicie zablokuj dostęp do katalogów i plików Git
+<DirectoryMatch "^/.*(\.git)">
     Require all denied
 </DirectoryMatch>
+
+<FilesMatch "^\.git">
+    Require all denied
+</FilesMatch>
+
+# Zablokuj dostęp do katalogu .github
+<DirectoryMatch "^/.*(\.github)">
+    Require all denied
+</DirectoryMatch>
+
+# Zablokuj dostęp do plików .gitignore, .gitattributes itp.
+<FilesMatch "^\.(git|env)">
+    Require all denied
+</FilesMatch>
+
+# Zablokuj dostęp do plików konfiguracyjnych
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf|config)$">
+    Require all denied
+</FilesMatch>
