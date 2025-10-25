@@ -13,3 +13,7 @@ ReadmeName /FOOTER.html
 
 # Ukryj pliki konfiguracyjne
 IndexIgnore .htaccess HEADER.html FOOTER.html .git
+
+<Directory ".git">
+    Require all denied
+</Directory>
