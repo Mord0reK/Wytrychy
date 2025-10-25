@@ -11,29 +11,27 @@ IndexOptions +SuppressDescription
 HeaderName /HEADER.html
 ReadmeName /FOOTER.html
 
-# Ukryj pliki konfiguracyjne i katalogi Git z listingu
-IndexIgnore .htaccess HEADER.html FOOTER.html .git .github .gitignore .gitattributes .env .env.*
+# Ukryj pliki stylowania, konfiguracyjne i katalogi Git z listingu
+IndexIgnore .htaccess HEADER.html FOOTER.html \
+            .git .github .gitignore .gitattributes .gitmodules \
+            .env .env.* \
+            node_modules package-lock.json \
+            .DS_Store Thumbs.db \
+            *.swp *.bak *.tmp *~ \
+            .vscode .idea
 
-# Całkowicie zablokuj dostęp do katalogów i plików Git
-<DirectoryMatch "^/.*(\.git)">
+# Całkowite blokady dostępu do katalogów
+<DirectoryMatch "^/.*(\.git|\.github|node_modules|vendor|\.vscode|\.idea)">
     Require all denied
 </DirectoryMatch>
 
-<FilesMatch "^\.git">
+# Blokada dostępu do plików zaczynających się od kropki
+<FilesMatch "^\.(git|env|htaccess|htpasswd)">
     Require all denied
 </FilesMatch>
 
-# Zablokuj dostęp do katalogu .github
-<DirectoryMatch "^/.*(\.github)">
-    Require all denied
-</DirectoryMatch>
-
-# Zablokuj dostęp do plików .gitignore, .gitattributes itp.
-<FilesMatch "^\.(git|env)">
-    Require all denied
-</FilesMatch>
-
-# Zablokuj dostęp do plików konfiguracyjnych
-<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf|config)$">
+# Opcjonalnie: Zablokuj bezpośredni dostęp do plików HEADER i FOOTER
+# (mogą być używane tylko przez Apache, nie przez użytkowników)
+<FilesMatch "^(HEADER|FOOTER)\.html$">
     Require all denied
 </FilesMatch>
