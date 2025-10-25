@@ -1,0 +1,59 @@
+</tbody>
+</table>
+</div>
+
+<div style="max-width: 1400px; margin: 30px auto; text-align: center; color: var(--color-text-secondary); font-size: 13px;">
+    <p>🚀 Apache Directory Listing | Powered by Apache2</p>
+    <p style="margin-top: 8px;">
+        <script>
+            const fileCount = document.querySelectorAll('tbody tr').length - 1; // -1 dla parent directory
+            document.write('📁 ' + Math.max(0, fileCount) + ' elementów');
+        </script>
+    </p>
+</div>
+
+<script>
+    // Dodatkowe funkcje JavaScript
+
+    // Formatowanie rozmiaru plików
+    document.addEventListener('DOMContentLoaded', function() {
+        const sizeCells = document.querySelectorAll('td:nth-child(4)');
+        sizeCells.forEach(cell => {
+            const text = cell.textContent.trim();
+            if (text && text !== '-') {
+                cell.innerHTML = '<span class="file-size">' + text + '</span>';
+            }
+        });
+
+        // Formatowanie dat
+        const dateCells = document.querySelectorAll('td:nth-child(3)');
+        dateCells.forEach(cell => {
+            const text = cell.textContent.trim();
+            if (text && text !== '-') {
+                cell.innerHTML = '<span class="file-date">' + text + '</span>';
+            }
+        });
+
+        // Dodanie emoji do katalogu nadrzędnego
+        const parentLink = document.querySelector('tbody tr:first-child a');
+        if (parentLink && parentLink.textContent.includes('Parent Directory')) {
+            parentLink.textContent = '⬆️ Katalog nadrzędny';
+        }
+    });
+
+    // Skróty klawiszowe
+    document.addEventListener('keydown', function(e) {
+        // Ctrl+F lub / do fokusa na wyszukiwanie
+        if ((e.ctrlKey && e.key === 'f') || e.key === '/') {
+            e.preventDefault();
+            document.getElementById('searchInput').focus();
+        }
+        // Escape aby wyczyścić wyszukiwanie
+        if (e.key === 'Escape') {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchInput').dispatchEvent(new Event('input'));
+        }
+    });
+</script>
+</body>
+</html>

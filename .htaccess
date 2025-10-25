@@ -1,0 +1,15 @@
+Options +Indexes
+IndexOptions +FancyIndexing
+IndexOptions +HTMLTable
+IndexOptions +FoldersFirst
+IndexOptions +IconsAreLinks
+IndexOptions +IgnoreCase
+IndexOptions +NameWidth=*
+IndexOptions +SuppressHTMLPreamble
+IndexOptions +SuppressDescription
+
+HeaderName /HEADER.html
+ReadmeName /FOOTER.html
+
+# Ukryj pliki konfiguracyjne
+IndexIgnore .htaccess HEADER.html FOOTER.html .git
