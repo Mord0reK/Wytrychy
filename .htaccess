@@ -11,9 +11,10 @@ IndexOptions +SuppressDescription
 HeaderName /HEADER.html
 ReadmeName /FOOTER.html
 
-# Ukryj pliki konfiguracyjne
-IndexIgnore .htaccess HEADER.html FOOTER.html .git
+# Ukryj pliki konfiguracyjne i katalogi Git
+IndexIgnore .htaccess HEADER.html FOOTER.html .git .github .gitignore .gitattributes
 
-<Directory ".git">
+# Opcjonalnie: Zablokuj całkowicie dostęp do katalogów .git i .github
+<DirectoryMatch "^/.*(\.git|\.github)">
     Require all denied
-</Directory>
+</DirectoryMatch>
