@@ -1,0 +1,22 @@
+name: Run Command on Commit
+
+# Trigger - uruchamia się przy każdym push (commit)
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-command:
+    runs-on: ubuntu-latest  # Możesz użyć: ubuntu-latest, windows-latest, macos-latest
+    
+    steps:
+      # Krok 1: Pobierz kod z repozytorium
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # Krok 2: Uruchom twoje polecenie
+      - name: Run custom command
+        run: |
+          echo "Action Działa"
+          ls -al
