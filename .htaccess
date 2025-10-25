@@ -1,4 +1,3 @@
-# To będzie dziedziczone przez wszystkie podkatalogi
 Options +Indexes
 IndexOptions +FancyIndexing
 IndexOptions +HTMLTable
@@ -9,15 +8,47 @@ IndexOptions +NameWidth=*
 IndexOptions +SuppressHTMLPreamble
 IndexOptions +SuppressDescription
 
-# Ścieżka z / = zawsze z głównego katalogu
+# Slash na początku = zawsze z /var/www/html (główny katalog)
 HeaderName /.header.html
 ReadmeName /.footer.html
 
 IndexIgnore .??* node_modules Thumbs.db vendor
 
-# Blokady przez RewriteRule
+# Ukryj pliki i katalogi z listingu
+IndexIgnore .??* node_modules Thumbs.db vendor composer.lock package-lock.json
+
+# Włącz RewriteEngine
 RewriteEngine On
+
+# Zablokuj dostęp do katalogów .git i .github
 RewriteRule ^(.*/)?\.git/ - [F,L]
 RewriteRule ^(.*/)?\.github/ - [F,L]
+
+# Zablokuj dostęp do plików zaczynających się od .git
 RewriteRule (^|/)\.git - [F,L]
+
+# Zablokuj dostęp do plików środowiskowych
 RewriteRule (^|/)\.env - [F,L]
+
+# Zablokuj dostęp do plików konfiguracyjnych
+RewriteRule (^|/)\.htaccess$ - [F,L]
+RewriteRule (^|/)\.htpasswd$ - [F,L]
+
+# Zablokuj dostęp do node_modules
+RewriteRule ^(.*/)?node_modules/ - [F,L]
+
+# Zablokuj dostęp do vendor (Composer)
+RewriteRule ^(.*/)?vendor/ - [F,L]
+
+# Zablokuj dostęp do plików backup i tymczasowych
+RewriteRule \.(bak|swp|tmp|log|old|orig|save)$ - [F,L]
+
+# Zablokuj dostęp do plików konfiguracyjnych IDE
+RewriteRule ^(.*/)?\.vscode/ - [F,L]
+RewriteRule ^(.*/)?\.idea/ - [F,L]
+
+# Zablokuj dostęp do plików SQL i baz danych
+RewriteRule \.(sql|sqlite|db)$ - [F,L]
+
+# Zablokuj dostęp do plików zawierających hasła lub klucze
+RewriteRule (config|settings|credentials|secrets)\.(php|json|yml|yaml|ini)$ - [F,L]
