@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsywność</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: black;
+        }
+
+        #blok {
+            width: 90%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        a {
+            color: white;
+        }
+
+        #header {
+            height: 100px;
+            background-color: gray;
+            margin: 0 0 10px 0;
+        }
+
+        #header h1 {
+            padding: 20px;
+            color: #e9e0d6;
+        }   
+
+        #kon {
+            width: 75%;
+            background-color: #c0c0c0;
+            float: left;
+            padding: 1%;
+            overflow: hidden;
+        }
+
+        #menu {
+            background-color: #bbc0cb;
+            width: 20%;
+            float: right;
+            padding: 1%;
+            overflow: hidden;
+        }
+
+        #menu h4 {
+            padding: 3px 3px 15px 3px;
+        }
+
+        #menu ul li {
+            list-style-type: none;
+            padding: 0 0 0 10px;
+        }
+
+        li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #media only screen and (max-width: 680px) {
+            #menu   {
+                width: 88%;
+                position: absolute;
+                height: 30px;
+            }
+
+            #menu h4 {
+                display: none;
+            }
+
+            #menu ul li {
+                display: inline;
+            }
+
+            #kon {
+                width: 98%;
+                position: relative;
+                top: 30px;
+                margin-top: 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Nagłówek strony Responsywnej</h1>
+    </header>
+    <div id="blok">
+        <section id="kon">
+            <h3>Opis</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vestibulum laoreet nibh sed consequat. Nulla tempor ligula at quam rhoncus, consectetur viverra lacus hendrerit. Curabitur porttitor diam quis egestas fringilla. Aenean suscipit neque eget dictum malesuada. Maecenas luctus eleifend tempor. Aliquam sit amet ligula eget tellus efficitur cursus ut in metus. Fusce eu quam at metus tristique vehicula. Aliquam vel elementum orci. Sed blandit eu lacus et vehicula. Donec ullamcorper sapien eu aliquam congue. Nunc eget risus quis ante placerat posuere. Fusce placerat massa et semper elementum. Aenean nec ligula arcu.
+
+                Sed tellus orci, ornare et dui et, feugiat mattis nisl. Curabitur in hendrerit tellus, at tempor mauris. Phasellus diam lectus, consequat sit amet dapibus at, hendrerit id dui. Morbi dapibus lobortis lobortis. Vivamus posuere egestas felis, vel tristique libero dignissim id. Proin consequat, ante eu finibus tristique, nisi ipsum luctus neque, at facilisis libero sapien quis sem. Curabitur dapibus imperdiet molestie. Mauris eget metus nec enim ultrices venenatis tincidunt rutrum massa. Vivamus dui felis, iaculis eget magna dictum, sollicitudin commodo tellus. Fusce sit amet mi placerat diam luctus suscipit id quis purus. Fusce congue nisl eget nisi tristique, at posuere erat interdum. Curabitur ultrices magna id elit tempor, nec finibus eros venenatis. Suspendisse et eros ultrices, pretium est vitae, efficitur mi. Quisque non cursus augue. Nulla quis dui varius, feugiat est quis, tincidunt ante. Nulla velit quam, cursus vel ligula eu, molestie accumsan quam.
+
+                Maecenas vel lectus ac lacus luctus rutrum. Proin non placerat tortor. Phasellus euismod leo quis commodo auctor. Ut ac dui scelerisque ligula sagittis cursus. Integer pretium ullamcorper elit at venenatis. Vivamus ullamcorper malesuada urna sed commodo. Nullam vel commodo sapien. Donec et varius risus, nec placerat libero. Integer et urna sit amet dui semper aliquam in in mi. Nunc laoreet egestas ultrices. Cras magna nunc.
+            </p>
+        </section>
+        <section id="menu">
+            <h4>Menu Do przeglądania</h4>
+            <ul>
+                <li><a href="index.html">Start</a></li>
+                <li><a href="nowe.html">Nowe kursy</a></li>
+                <li><a href="serwis.html">Serwis</a></li>
+                <li><a href="uslugi.html">Usługi</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
