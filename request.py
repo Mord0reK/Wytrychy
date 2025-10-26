@@ -33,8 +33,8 @@ def send_webhook_request():
         # Przygotowanie headerów
         headers = {
             auth_header_name: auth_header_value,
-            'CF-ACI': cf_aci,
-            'CF-ACS': cf_acs
+            'CF-Access-Client-ID': cf_aci,
+            'CF-Access-Client-Secret': cf_acs
         }
         
         # Wykonanie zapytania
