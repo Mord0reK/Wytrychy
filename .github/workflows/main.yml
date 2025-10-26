@@ -6,17 +6,24 @@ on:
     branches:
       - main
 
+env:
+  Auth-Header-Name: ${{ secrets.AUTH-HEADER-NAME }}
+  Auth-Header-Value: ${{ secrets.AUTH-HEADER-VALUE }}
+  CF-ACI: ${{ secrets.CF_ACI }}
+  CF-ACS: ${{ secrets.CF_ACS }}
+  Webhook-Url: ${{ secrets.WEBHOOK-URL }}
+  Webhook-Method: ${{ secrets.WEBHOOK-METHOD }}
+
 jobs:
   run-command:
     runs-on: ubuntu-latest  # Możesz użyć: ubuntu-latest, windows-latest, macos-latest
     
     steps:
       # Krok 1: Pobierz kod z repozytorium
-      - name: Checkout code
+      - name: Pobierz kod z Repo
         uses: actions/checkout@v4
       
       # Krok 2: Uruchom twoje polecenie
-      - name: Run custom command
-        run: |
-          echo "Action Działa"
-          ls -al
+      - name: Wykonaj zapytanie do Webhooka
+        run: python3 request.py
+          
