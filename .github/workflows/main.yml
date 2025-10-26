@@ -7,12 +7,12 @@ on:
       - main
 
 env:
-  Auth-Header-Name: ${{ secrets.AUTH-HEADER-NAME }}
-  Auth-Header-Value: ${{ secrets.AUTH-HEADER-VALUE }}
+  Auth-Header-Name: ${{ secrets.AUTH_HEADER_NAME }}
+  Auth-Header-Value: ${{ secrets.AUTH_HEADER_VALUE }}
   CF-ACI: ${{ secrets.CF_ACI }}
   CF-ACS: ${{ secrets.CF_ACS }}
-  Webhook-Url: ${{ secrets.WEBHOOK-URL }}
-  Webhook-Method: ${{ secrets.WEBHOOK-METHOD }}
+  Webhook-Url: ${{ secrets.WEBHOOK_URL }}
+  Webhook-Method: ${{ secrets.WEBHOOK_METHOD }}
 
 jobs:
   run-command:
