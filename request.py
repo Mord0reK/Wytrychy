@@ -8,12 +8,12 @@ def send_webhook_request():
     """
     try:
         # Pobranie zmiennych środowiskowych
-        auth_header_name = os.getenv('AUTH-HEADER-NAME')
-        auth_header_value = os.getenv('AUTH-HEADER-VALUE')
-        cf_aci = os.getenv('CF-ACI')
-        cf_acs = os.getenv('CF-ACS')
-        webhook_url = os.getenv('WEBHOOK-URL')
-        webhook_method = os.getenv('WEBHOOK-METHOD')
+        auth_header_name = os.getenv('AUTH_HEADER_NAME')
+        auth_header_value = os.getenv('AUTH_HEADER_VALUE')
+        cf_aci = os.getenv('CF_ACI')
+        cf_acs = os.getenv('CF_ACS')
+        webhook_url = os.getenv('WEBHOOK_URL')
+        webhook_method = os.getenv('WEBHOOK_METHOD')
         
         # Walidacja wymaganych zmiennych
         required_vars = {
