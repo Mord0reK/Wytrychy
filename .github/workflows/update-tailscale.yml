@@ -28,5 +28,4 @@ jobs:
 
       - name: Połączenie przez ssh jako github-actions
         run: |
-          MACHINE_IP=$(tailscale ip -4 "$REMOTE_HOSTNAME")
-          ssh "${REMOTE_USER}@${MACHINE_IP}"
+          ping -c 3 vps
