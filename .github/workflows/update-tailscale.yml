@@ -28,4 +28,4 @@ jobs:
 
       - name: Połączenie przez ssh jako github-actions
         run: |
-          ssh ${{ env.REMOTE_USER }}@${{ env.REMOTE_HOSTNAME }}
+          tailscale ssh ${{ env.REMOTE_USER }}@${{ env.REMOTE_HOSTNAME }}
