@@ -13,7 +13,7 @@ jobs:
     env:
       TS_TAG: tag:github-actions
       REMOTE_USER: github-actions
-      REMOTE_HOSTNAME: vps   # nazwa node'a w Tailscale, np. "prod-1"
+      REMOTE_HOSTNAME: vps
 
     steps:
       - name: Checkout
@@ -28,4 +28,5 @@ jobs:
 
       - name: Połączenie przez ssh jako github-actions
         run: |
+          python3 powiadomienie.py
           tailscale ssh ${{ env.REMOTE_USER }}@${{ env.REMOTE_HOSTNAME }}
