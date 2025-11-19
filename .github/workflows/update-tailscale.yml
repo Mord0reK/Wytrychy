@@ -26,7 +26,9 @@ jobs:
           oauth-secret: ${{ secrets.TS_OAUTH_CLIENT_SECRET }}
           tags: ${{ env.TS_TAG }}
 
+      - name: Wyślij powiadomienie na Discord
+        run: python3 powiadomienie.py
+
       - name: Połączenie przez ssh jako github-actions
         run: |
-          python3 powiadomienie.py
           tailscale ssh ${{ env.REMOTE_USER }}@${{ env.REMOTE_HOSTNAME }}
