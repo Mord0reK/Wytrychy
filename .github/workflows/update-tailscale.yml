@@ -14,6 +14,11 @@ jobs:
       TS_TAG: tag:github-actions
       REMOTE_USER: github-actions
       REMOTE_HOSTNAME: vps
+      GITHUB_REPOSITORY: ${{ github.REPOSITORY }}
+      GITHUB_REF_NAME: ${{ github.GITHUB_REF_NAME }}
+      GITHUB_ACTOR: ${{ github.ACTOR }}
+      GITHUB_RUN_NUMBER: ${{ github.RUN_NUMBER }}
+      GITHUB_SHA: ${{ github.SHA }}
 
     steps:
       - name: Checkout
