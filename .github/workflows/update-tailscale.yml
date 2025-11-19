@@ -1,4 +1,4 @@
-name: Deploy via Tailscale SSH
+name:  Aktualizowanie strony przez Tailscale
 
 on:
   push:
@@ -28,4 +28,4 @@ jobs:
 
       - name: Połączenie przez ssh jako github-actions
         run: |
-          ping -c 3 vps
+          ssh ${{ env.REMOTE_USER }}${{ env.REMOTE_HOSTNAME }}
