@@ -1,9 +1,7 @@
 <?php
 
-$connection = mysqli_connect("100.109.170.34:13306", "root", "rootpassword", "wytrychy_db") or die("Problem z połączeniem.");
+$connection = mysqli_connect("wytrychy-db", "root", "rootpassword", "Wytrychy-21-11");
 
-$zapytanie = mysqli_query($connection, "SELECT * FROM aktorzy");
-
-mysqli_query($connection, $zapytanie);
+$zapytanie = mysqli_query($connection, "INSERT INTO aktorzy (imie, nazwisko, plec, kraj_ur, data_ur) VALUES ('Marcel', 'Stosio', '', '', '2137-04-04')");
 
 mysqli_close($connection);
