@@ -40,7 +40,7 @@ jobs:
           mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ env.REMOTE_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ env.REMOTE_HOSTNAME }} >> ~/.ssh/known_hosts
 
       - name: Połączenie przez ssh jako github-actions
         run: |
