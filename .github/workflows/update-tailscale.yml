@@ -35,6 +35,13 @@ jobs:
       - name: Wyślij powiadomienie na Discord
         run: python3 powiadomienie.py
 
+      - name: Konfiguracja klucza SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
       - name: Połączenie przez ssh jako github-actions
         run: |
-          tailscale ssh ${{ env.REMOTE_USER }}@${{ env.REMOTE_HOSTNAME }}
+          ssh -i ~/.ssh/id_rsa ${{ env.REMOTE_USER }}@${{ env.REMOTE_HOSTNAME }} 
