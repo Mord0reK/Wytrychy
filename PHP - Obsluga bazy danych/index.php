@@ -1,6 +1,6 @@
 <?php
 
-$connection = mysqli_connect("localhost:13306", "root", "rootpassword", "Wytrychy-21-11");
+$connection = mysqli_connect("100.109.170.34:13306", "root", "rootpassword", "wytrychy_db") or die("Problem z połączeniem.");
 
 $zapytanie = mysqli_query($connection, "SELECT * FROM aktorzy");
 
