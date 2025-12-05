@@ -4,20 +4,20 @@
     padding: 0;
 }
 
-
 body
 {
     background-color: #F6E5DC;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
 }
-
 
 header
 {
     color: white;
     background-color: #2F180C;
     height: 60px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer
@@ -25,4 +25,63 @@ footer
     background-color: #2F180C;
     color: white;
     height: 60px;
+    padding-top: 10px;
+}
+
+.glowny
+{
+    display: flex;
+    background-color: #F6E5DC;
+    font-size: 200%;
+}
+
+.glowny .zdjecie
+{
+    width: 60%;
+}
+
+.glowny .zdjecie img
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.glowny > div:last-child
+{
+    width: 40%;
+    padding: 40px;
+    align-content: center;
+}
+
+.glowny h4
+{
+    color: #2F180C;
+    margin-bottom: 20px;
+}
+
+.glowny ul
+{
+    list-style-type: circle;
+    margin-left: 20px;
+}
+
+.glowny li
+{
+    color: #2F180C;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dolny
+{
+    background-color: #C4A391;
+    padding: 20px;
+    text-align: center;
+}
+
+.dolny h2
+{
+    margin-bottom: 15px;
 }
